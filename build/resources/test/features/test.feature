@@ -1,12 +1,13 @@
-Feature: Ejemplo The Free Range Tester
+Feature: Solstice Challenge
+  As a Customer when I search for Alexa, I want to see if the third option on the second page is available for purchase and can be added to the cart.
 
   Background:
-    Given I am on the Google search page
+    Given the user navigates to amazon.com
 
   @Test
-  Scenario: Navigate to Google and Search a keyword.
-    Given I am on the Google search page
-    When I enter a word in the search field:
-    Then I see results related to the word entered
+  Scenario: Navigate to Amazon and search Alexa.
+    And Searches for Alexa
+    And navigates to the second page
 
- 
+
+
