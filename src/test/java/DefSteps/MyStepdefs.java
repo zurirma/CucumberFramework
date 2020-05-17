@@ -4,32 +4,16 @@ import Paginas.AmazonSearchPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 public class MyStepdefs {
 
 
     AmazonSearchPage amazonSearch = new AmazonSearchPage();
+    public static WebDriver driver;
+    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-
-    //@Given("^I am on the Google search page$")
-    //public void iAmOnTheGoogleSearchPage() {
-    //    googleSearch.navigateToGoogle();
-    //}
-
-    //@When("^I enter a word in the search field:$")
-    //public void iEnterAWordInTheSearchField() {
-     //   googleSearch.enterSearchCriteria("www.TheFreeRangeTester.com/n");
-    //}
-
-    //@And("^click on the search button$")
-   // public void clickOnTheSearchButton() {
-    //    googleSearch.clickOnSearchGoogle();
-   // }
-
-    //@Then("^I see results related to the word entered$")
-    //public void iSeeResultsRelatedToTheWordEntered() {
-
-    //}
 
     @Given("^the user navigates to amazon.com$")
     public void theUserNavigatesToAmazonCom() {
@@ -43,14 +27,15 @@ public class MyStepdefs {
     }
 
     @And("^navigates to the second page$")
-    public void navigatesToTheSecondPage() {
+    public void navigatesToTheSecondPage() throws InterruptedException {
+        Thread.sleep(2000);
         amazonSearch.clickOnPage();
     }
 
-   @And("^selects the third item$")
-   public void selectsTheThirdItem() {
-      amazonSearch.selectItem();
-    }
+  // @And("^selects the third item$")
+   //public void selectsTheThirdItem() {
+     // amazonSearch.selectItem();
+    //}
 
     //@Then("^assert that the item would be available for purchase")
     //public void assertThatTheItemWouldBeAvailableForPurchase() {
